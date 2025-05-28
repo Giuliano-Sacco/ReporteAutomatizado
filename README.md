@@ -1,25 +1,88 @@
-# ReporteAutomatizado # Sistema de Gestión de Clientes - Automatización en Python
+# 📊 Reporte Automatizado de Ventas
 
-Este proyecto es una solución simple y automatizada para gestionar clientes, ideal para pequeñas empresas, profesionales independientes o tareas administrativas. Permite **agregar**, **editar**, **eliminar**, **buscar** y **listar** clientes almacenados en una base de datos **SQLite**.
+Este proyecto permite generar automáticamente reportes de ventas a partir de un archivo Excel, con un resumen diario de cantidades y montos, además de un gráfico visual de las ventas por día.
 
-## Características
+Ideal para automatizar tareas administrativas, análisis de ventas, o aprender a trabajar con `pandas`, `matplotlib` y archivos Excel en Python.
 
-- Registro de nuevos clientes con nombre, correo electrónico y teléfono.
-- Búsqueda rápida de clientes por nombre.
-- Edición de datos existentes.
-- Eliminación segura de clientes.
-- Listado de todos los clientes registrados.
-- Todo desde una interfaz simple en la terminal.
-- Código modular y fácil de mantener.
+---
 
-## Tecnologías utilizadas
+## 🧪 Instrucciones de Uso
 
-- **Python 3**
-- **SQLite** (integrado en Python)
-- Librerías estándar (`sqlite3`, `os`, etc.)
+### ⚙️ Requisitos
 
-## Instalación
+Asegurate de tener Python 3 instalado y luego ejecutá:
 
-1. Asegurate de tener Python 3 instalado. Podés verificarlo con:
-   ```bash
-   python3 --version
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 📁 Estructura del Proyecto
+
+```
+ReporteAutomatizado/
+├── data/
+│   └── ventas.xlsx        # Archivo de entrada con datos de ventas
+├── output/                # Carpeta generada automáticamente con los reportes y gráficos
+├── src/
+│   └── main.py            # Script principal
+├── requirements.txt       # Lista de dependencias del proyecto
+└── README.md
+```
+
+---
+
+### 📄 Formato del archivo `ventas.xlsx`
+
+Debe estar ubicado en `data/ventas.xlsx` y tener las siguientes columnas:
+
+| Fecha       | Cantidad | Precio Unitario |
+|-------------|----------|------------------|
+| 2025-05-25  | 2        | 100              |
+| 2025-05-25  | 1        | 200              |
+| 2025-05-26  | 3        | 150              |
+
+> ⚠️ Las columnas deben llamarse **exactamente**: `Fecha`, `Cantidad`, `Precio Unitario`.
+
+---
+
+### 🚀 Cómo Ejecutar el Script
+
+1. Abrí una terminal.
+2. Navegá a la carpeta `src` del proyecto:
+
+```bash
+cd src
+```
+
+3. Ejecutá el script:
+
+```bash
+python3 main.py
+```
+
+---
+
+### 📦 ¿Qué se genera?
+
+Al correr el script, se crean dos archivos nuevos dentro de la carpeta `output/`:
+
+- 📊 `reporte_YYYY-MM-DD.xlsx`: archivo Excel con el resumen total de ventas por día.
+- 📈 `grafico_YYYY-MM-DD.png`: gráfico de las ventas totales por fecha.
+
+---
+
+### 🛠️ Tecnologías Utilizadas
+
+- [Python 3](https://www.python.org/)
+- [pandas](https://pandas.pydata.org/)
+- [matplotlib](https://matplotlib.org/)
+- [openpyxl](https://openpyxl.readthedocs.io/)
+
+---
+
+## ✨ Autor
+
+**Giuliano Sacco**  
+[GitHub](https://github.com/Giuliano-Sacco)
